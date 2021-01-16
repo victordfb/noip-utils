@@ -16,7 +16,7 @@ RespostaHttp HttpClient::executa()
 {
     try
     {
-        auto const host = "whatismyip.host";
+        auto const host = this->url;
         auto const port = "80";
         auto const target = "/";
         auto const version = 11;
@@ -66,12 +66,12 @@ RespostaHttp HttpClient::executa()
 
         std::stringstream ss;
         ss << res;
-        return RespostaHttp(ss.str());
+        return RespostaHttp(res.result_int(), "", ss.str());
 
         // If we get here then the connection is closed gracefully
     }
     catch (std::exception const &e)
     {
-        return RespostaHttp("Erro" + string(e.what()));
+        return RespostaHttp(-1, e.what(), "Erro" + string(e.what()));
     }
 }
