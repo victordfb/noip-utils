@@ -1,6 +1,6 @@
 # Noip Utils
 
-Utilities to integrate your smart home or other technologies that has to have access from internet but you don't have a fixed ip.
+Utilities to integrate your smart home or other technologies that has to have access from internet but you don't have a static ip.
 
 ## Why another no-ip updater?
 
