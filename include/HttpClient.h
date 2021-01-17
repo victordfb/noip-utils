@@ -10,7 +10,7 @@
 #include <iostream>
 #include <string>
 
-#include "RespostaHttp.h"
+#include "ResponseHttp.h"
 
 using namespace std;
 
@@ -22,7 +22,7 @@ private:
 public:
     HttpClient(string url) : url(url) {}
 
-    RespostaHttp executa();
+    ResponseHttp executa();
 };
 
 #endif //NOIPUTILS_HTTPCLIENT_H

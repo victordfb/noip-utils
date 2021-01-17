@@ -12,7 +12,7 @@
 using tcp = boost::asio::ip::tcp;       // from <boost/asio/ip/tcp.hpp>
 namespace http = boost::beast::http;    // from <boost/beast/http.hpp>
 
-RespostaHttp HttpClient::executa()
+ResponseHttp HttpClient::executa()
 {
     try
     {
@@ -66,12 +66,12 @@ RespostaHttp HttpClient::executa()
 
         std::stringstream ss;
         ss << res;
-        return RespostaHttp(res.result_int(), "", ss.str());
+        return ResponseHttp(res.result_int(), "", ss.str());
 
         // If we get here then the connection is closed gracefully
     }
     catch (std::exception const &e)
     {
-        return RespostaHttp(-1, e.what(), "Erro" + string(e.what()));
+        return ResponseHttp(-1, e.what(), "Erro" + string(e.what()));
     }
 }

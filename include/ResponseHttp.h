@@ -1,15 +1,11 @@
-//
-// Created by victor on 1/16/21.
-//
-
-#ifndef NOIPUTILS_RESPOSTAHTTP_H
-#define NOIPUTILS_RESPOSTAHTTP_H
+#ifndef NOIPUTILS_RESPONSEHTTP_H
+#define NOIPUTILS_RESPONSEHTTP_H
 
 #include <string>
 
 using namespace std;
 
-class RespostaHttp
+class ResponseHttp
 {
 private:
     int status;
@@ -17,9 +13,9 @@ private:
     string content;
 
 public:
-    RespostaHttp(string content) : status(200), statusMessage(""), content(content) {}
+    ResponseHttp(string content) : status(200), statusMessage(""), content(content) {}
 
-    RespostaHttp(int status, string statusMsg, string content)
+    ResponseHttp(int status, string statusMsg, string content)
             : status(status), statusMessage(statusMsg),
               content(content) {}
 
@@ -31,4 +27,4 @@ public:
 };
 
 
-#endif //NOIPUTILS_RESPOSTAHTTP_H
+#endif //NOIPUTILS_RESPONSEHTTP_H
